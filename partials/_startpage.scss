@@ -1,0 +1,179 @@
+.startpg-header {
+  height: 100vh;
+  background-color: $main-color;
+  @include flex(column, center, center);
+  gap: 20px;
+  position: relative;
+
+  img {
+    &:first-of-type {
+      border-radius: 50%;
+      width: 15%;
+    }
+
+    &:last-of-type {
+      position: absolute;
+      bottom: 3%;
+      transform: scale(1.3);
+      animation: arrow 1s ease-in-out infinite;
+    }
+  }
+
+  .links {
+    @include flex(row, center, center);
+    gap: 20px;
+    list-style-type: none;
+    margin-top: 10px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    &:nth-of-type(2) {
+      position: absolute;
+      bottom: 7%;
+    }
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1.6);
+  }
+
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+.startpg-main {
+  background-color: $secondary-color;
+  @include flex(column, center, center);
+
+  h2 {
+    padding: 20px;
+  }
+
+  .main-project-container {
+    background-color: $tertiary-color;
+    @include flex(row, space-between, flex-start);
+    padding: 20px;
+    gap: 50px;
+    margin: 20px;
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 10px;
+
+    &:hover {
+      border: 2px solid $outline-hover-color;
+      transform: scale(1.02);
+      transition: all 0.3s ease-in;
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .other-project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    width: 80%;
+
+    img {
+      width: 100%;
+    }
+
+    .project-cards {
+      border: 1px solid white;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: $tertiary-color;
+
+      &:hover {
+        border: 1px solid $outline-hover-color;
+        transform: scale(1.02);
+        transition: all 0.3s ease-in;
+      }
+    }
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  list-style-type: none;
+  width: 30%;
+  text-align: center;
+}
+
+.button-look {
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 7px 0;
+  background-color: $tertiary-color;
+
+  &:hover {
+    border: 1px solid $outline-hover-color;
+  }
+
+  &.LR-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.startpg-form {
+  background-color: $tertiary-color;
+  width: 100%;
+  @include flex(column, center, center);
+
+  .labels {
+    margin: 10px;
+    text-align: center;
+  }
+
+  .dimensions {
+    width: 350px;
+    height: 25px;
+    border-radius: 5px;
+    color: black;
+    padding: 0 5px;
+
+    &:focus {
+      outline-color: $hover-color;
+    }
+
+    &.extra {
+      height: 60px;
+    }
+  }
+
+  .button-styling {
+    display: block;
+    background-color: $main-color;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+
+    &:hover {
+      border: 1px solid $outline-hover-color;
+    }
+  }
+}
+
+.startpg-footer {
+  text-align: center;
+  padding: 20px;
+  line-height: 2rem;
+}
