@@ -93,7 +93,8 @@ p {
   border-radius: 10px;
 }
 .startpg-main .main-project-container:hover {
-  border: 2px solid #ffa500;
+  outline: 2px solid #ffa500;
+  border: none;
   transform: scale(1.02);
   transition: all 0.3s ease-in;
 }
@@ -117,7 +118,8 @@ p {
   background-color: #001f3f;
 }
 .startpg-main .other-project-container .project-cards:hover {
-  border: 1px solid #ffa500;
+  outline: 2px solid #ffa500;
+  border: none;
   transform: scale(1.02);
   transition: all 0.3s ease-in;
 }
@@ -160,7 +162,7 @@ p {
 }
 .startpg-form .dimensions {
   width: 350px;
-  height: 25px;
+  height: 30px;
   border-radius: 5px;
   color: black;
   padding: 0 5px;
