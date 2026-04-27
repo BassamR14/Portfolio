@@ -88,8 +88,8 @@ p {
   padding: 20px;
   gap: 50px;
   margin: 20px;
-  width: 70%;
-  border: 1px solid white;
+  width: 80%;
+  outline: 1px solid white;
   border-radius: 10px;
 }
 .startpg-main .main-project-container:hover {
@@ -113,7 +113,7 @@ p {
   width: 100%;
 }
 .startpg-main .other-project-container .project-cards {
-  border: 1px solid white;
+  outline: 1px solid white;
   border-radius: 10px;
   padding: 10px;
   background-color: #001f3f;
