@@ -1,0 +1,38 @@
+export const projects = [
+  {
+    title: "My Personal Project",
+    description: "...",
+    tech: ["HTML", "SCSS", "JS"],
+    link: "#",
+    githubLink: "",
+    image: "images/placeholder.jpg",
+    featured: true,
+  },
+  {
+    title: "Uni Project 1",
+    description: "...",
+    tech: ["HTML", "CSS", "JS"],
+    link: "#",
+    githubLink: "",
+    image: "images/placeholder.jpg",
+    featured: false,
+  },
+  {
+    title: "Uni Project 2",
+    description: "...",
+    tech: ["HTML", "CSS", "JS"],
+    link: "#",
+    githubLink: "",
+    image: "images/placeholder.jpg",
+    featured: false,
+  },
+  {
+    title: "Uni Project 3",
+    description: "...",
+    tech: ["HTML", "CSS", "JS"],
+    link: "#",
+    githubLink: "",
+    image: "images/placeholder.jpg",
+    featured: false,
+  },
+];
