@@ -15,6 +15,13 @@
     // &:hover {
     //   outline: 2px solid black;
     // }
+
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .profile {
