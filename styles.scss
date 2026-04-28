@@ -1,5 +1,14 @@
+@font-face {
+  font-family: "Gozaru";
+  src: url("../fonts/Gozaru.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "partials/base";
 @import "partials/mixins";
 @import "partials/queries";
 @import "partials/variables";
 @import "partials/index";
+@import "partials/manga";
+@import "partials/cyberpunk";

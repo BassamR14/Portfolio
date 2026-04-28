@@ -1,7 +1,21 @@
+@font-face {
+  font-family: "Gozaru";
+  src: url("../fonts/Gozaru.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+i {
+  font-size: 1.5rem;
+}
+
+h2 {
+  text-align: center;
 }
 
 #container {
@@ -35,10 +49,40 @@
 #container .skills {
   grid-column: 1/4;
   grid-row: 5/7;
+  overflow-y: auto;
+}
+#container .skills .skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#container .skills .skills-container h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+#container .skills .skills-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+#container .skills .skills-container li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+#container .education {
+  grid-column: 1/3;
+  grid-row: 7/9;
 }
 #container .contact-me {
-  grid-column: 1/4;
+  grid-column: 3/4;
   grid-row: 7/9;
+  overflow-y: auto;
 }
 #container .about-me {
   grid-column: 4/8;
@@ -47,6 +91,41 @@
 #container .theme {
   grid-column: 8/9;
   grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container .theme .theme-toggle {
+  position: relative;
+  display: flex;
+  background: #eee;
+  border-radius: 999px;
+  padding: 4px;
+  gap: 0;
+}
+#container .theme .toggle-pill {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: #000;
+  border-radius: 999px;
+  transition: transform 0.3s ease;
+}
+#container .theme .toggle-btn {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+#container .theme .toggle-btn.active {
+  color: #fff;
 }
 #container .links {
   grid-column: 8/9;
@@ -54,6 +133,13 @@
 }
 #container .links img {
   width: 30px;
+}
+#container .links nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 #container .links a:link,
 #container .links a:visited {
@@ -63,14 +149,27 @@
 #container .main-project {
   grid-column: 4/9;
   grid-row: 3/7;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 #container .main-project img {
   width: 500px;
+}
+#container .main-project .main-proj-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#container .main-project .main-proj-info .tech-used {
+  display: inline-flex;
+  gap: 10px;
 }
 #container .other-projects {
   grid-column: 4/9;
   grid-row: 7/9;
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 #container .other-projects .other-projects-container {
@@ -79,5 +178,218 @@
   align-items: center;
 }
 #container .other-projects img {
-  width: 200px;
+  width: 300px;
+}
+
+body.theme-manga {
+  font-family: "M PLUS 1p", sans-serif;
+  background-color: #f5f0e8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+}
+body.theme-manga #container > * {
+  border: 2px solid #111;
+  box-shadow: 4px 4px 0px #111;
+  background: #f5f0e8;
+}
+body.theme-manga h1,
+body.theme-manga h2 {
+  font-family: "Gozaru", serif;
+}
+body.theme-manga p,
+body.theme-manga li,
+body.theme-manga label,
+body.theme-manga button,
+body.theme-manga input,
+body.theme-manga textarea {
+  font-family: "M PLUS 1p", sans-serif;
+}
+body.theme-manga .profile {
+  border: 3px solid #111;
+}
+body.theme-manga .about-me,
+body.theme-manga .main-project {
+  border-left: 5px solid #111;
+}
+body.theme-manga .contact-me {
+  font-size: 12px;
+}
+body.theme-manga .contact-me button,
+body.theme-manga .other-projects button {
+  background: #111;
+  color: #f5f0e8;
+  border: 2px solid #111;
+  font-family: "Zen Antique", serif;
+  font-size: 1rem;
+  padding: 8px 20px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #111;
+  transition: all 0.1s ease;
+  width: 100%;
+  margin-top: 8px;
+}
+body.theme-manga .contact-me button:hover,
+body.theme-manga .other-projects button:hover {
+  box-shadow: 1px 1px 0px #111;
+  transform: translate(2px, 2px);
+}
+body.theme-manga .contact-me button:active,
+body.theme-manga .other-projects button:active {
+  box-shadow: none;
+  transform: translate(3px, 3px);
+}
+
+body.theme-cyberpunk {
+  font-family: "Share Tech Mono", monospace;
+  background-color: #0d0d0d;
+}
+body.theme-cyberpunk::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.15) 2px, rgba(0, 0, 0, 0.15) 4px);
+  pointer-events: none;
+  z-index: 999;
+}
+body.theme-cyberpunk #container {
+  background-color: #0d0d0d;
+}
+body.theme-cyberpunk #container > * {
+  background-color: #111;
+  border: 1px solid #f5c400;
+  box-shadow: 0 0 8px rgba(245, 196, 0, 0.3), inset 0 0 8px rgba(245, 196, 0, 0.05);
+  color: #f5c400;
+}
+body.theme-cyberpunk h1,
+body.theme-cyberpunk h2,
+body.theme-cyberpunk h3 {
+  font-family: "Rajdhani", sans-serif;
+  color: #f5c400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+body.theme-cyberpunk p,
+body.theme-cyberpunk li,
+body.theme-cyberpunk label {
+  color: #c9a800;
+}
+body.theme-cyberpunk input,
+body.theme-cyberpunk textarea {
+  background: #1a1a1a;
+  border: 1px solid #f5c400;
+  color: #f5c400;
+  font-family: "Share Tech Mono", monospace;
+}
+body.theme-cyberpunk input:focus,
+body.theme-cyberpunk textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(245, 196, 0, 0.6);
+}
+body.theme-cyberpunk button {
+  background: #f5c400;
+  color: #0d0d0d;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+}
+body.theme-cyberpunk button:hover {
+  background: #ffd700;
+  box-shadow: 0 0 12px rgba(245, 196, 0, 0.8);
+}
+body.theme-cyberpunk .profile h1 {
+  position: relative;
+  animation: glitch 3s infinite;
+}
+body.theme-cyberpunk .profile h1::before, body.theme-cyberpunk .profile h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+body.theme-cyberpunk .profile h1::before {
+  color: #ff003c;
+  animation: glitch-top 3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+}
+body.theme-cyberpunk .profile h1::after {
+  color: #00fff9;
+  animation: glitch-bottom 3s infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 1px);
+  }
+  94% {
+    transform: translate(2px, -1px);
+  }
+  96% {
+    transform: translate(-1px, 2px);
+  }
+}
+@keyframes glitch-top {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(2px, -1px);
+  }
+  94% {
+    transform: translate(-2px, 1px);
+  }
+}
+@keyframes glitch-bottom {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 1px);
+  }
+  94% {
+    transform: translate(2px, -1px);
+  }
+}
+body.theme-cyberpunk .about-me,
+body.theme-cyberpunk .main-project {
+  border-left: 4px solid #f5c400;
+}
+body.theme-cyberpunk .skills i {
+  color: #f5c400;
+  filter: drop-shadow(0 0 4px rgba(245, 196, 0, 0.6));
+}
+body.theme-cyberpunk .links i {
+  color: #f5c400;
+}
+body.theme-cyberpunk .links img {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(0deg);
+}
+body.theme-cyberpunk .contact-me button,
+body.theme-cyberpunk .other-projects button {
+  background: #f5c400;
+  color: #0d0d0d;
+  border: none;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+body.theme-cyberpunk .contact-me button:hover,
+body.theme-cyberpunk .other-projects button:hover {
+  background: #ffd700;
+  box-shadow: 0 0 12px rgba(245, 196, 0, 0.8);
+}
+body.theme-cyberpunk .contact-me button:active,
+body.theme-cyberpunk .other-projects button:active {
+  transform: scale(0.97);
 }/*# sourceMappingURL=styles.css.map */

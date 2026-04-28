@@ -13,20 +13,36 @@
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
     <main id="container">
       <header class="profile">
         <img src="images/batman-profile.jpg" alt="" />
-        <h1>Bassam Ruwaida</h1>
+        <h1 data-text="Bassam Ruwaida">Bassam Ruwaida</h1>
         <h2>Frontend Developer</h2>
         <p>Email: bassam.ruwaida@email.com</p>
         <p>Mobile: 076 - 226 24 92</p>
       </header>
 
       <section class="skills">
-        <h2>Skills & Technologies</h2>
-        <ul class="skills-container"></ul>
+        <h2>Skills and Technologies</h2>
+        <div class="skills-container"></div>
+      </section>
+
+      <section class="education">
+        <h2>Education</h2>
+        <h3>Frontendutvecklare (400YH-p)</h3>
+        <p>Nackademin, Stockholm</p>
+        <br />
+        <h3>Teknologie kandidatexamen (180p)</h3>
+        <p>Kungliga Tekniska Högskolan (KTH), Stockholm</p>
       </section>
 
       <section class="contact-me">
@@ -69,22 +85,27 @@
       </section>
 
       <section class="theme">
-        <h2>Theme</h2>
-        <select name="themes" id="themse">
-          <option value="" hidden></option>
-          <option value="manga">Manga</option>
-          <option value="cyberpunk">Cyberpunk</option>
-        </select>
+        <div class="theme-toggle">
+          <div class="toggle-pill"></div>
+          <button class="toggle-btn active" data-theme="manga">Manga</button>
+          <button class="toggle-btn" data-theme="cyberpunk">Cyberpunk</button>
+        </div>
       </section>
 
-      <nav class="links">
+      <div class="links">
         <h2>Links</h2>
-        <a href="" target="_blank"> <i class="devicon-linkedin-plain"></i> </a>
-        <a href="" target="_blank"> <i class="devicon-github-original"></i> </a>
-        <a href="" target="_blank">
-          <img src="images/cv-svg.svg" alt="CV" />
-        </a>
-      </nav>
+        <nav>
+          <a href="" target="_blank">
+            <i class="devicon-linkedin-plain"></i>
+          </a>
+          <a href="https://github.com/BassamR14" target="_blank">
+            <i class="devicon-github-original"></i>
+          </a>
+          <a href="" target="_blank">
+            <img src="images/cv-svg.svg" alt="CV" />
+          </a>
+        </nav>
+      </div>
 
       <article class="main-project"></article>
 

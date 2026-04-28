@@ -1,0 +1,65 @@
+body.theme-manga {
+  font-family: "M PLUS 1p", sans-serif;
+  background-color: #f5f0e8;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+
+  #container {
+    > * {
+      border: 2px solid #111;
+      box-shadow: 4px 4px 0px #111; // hard ink shadow, no blur
+      background: #f5f0e8;
+    }
+  }
+
+  h1,
+  h2 {
+    font-family: "Gozaru", serif;
+  }
+
+  p,
+  li,
+  label,
+  button,
+  input,
+  textarea {
+    font-family: "M PLUS 1p", sans-serif;
+  }
+
+  .profile {
+    border: 3px solid #111;
+  }
+
+  .about-me,
+  .main-project {
+    border-left: 5px solid #111;
+  }
+
+  .contact-me {
+    font-size: 12px;
+  }
+
+  .contact-me button,
+  .other-projects button {
+    background: #111;
+    color: #f5f0e8;
+    border: 2px solid #111;
+    font-family: "Zen Antique", serif;
+    font-size: 1rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #111;
+    transition: all 0.1s ease;
+    width: 100%;
+    margin-top: 8px;
+
+    &:hover {
+      box-shadow: 1px 1px 0px #111;
+      transform: translate(2px, 2px);
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translate(3px, 3px);
+    }
+  }
+}

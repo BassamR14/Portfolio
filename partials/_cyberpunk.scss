@@ -1,0 +1,194 @@
+body.theme-cyberpunk {
+  font-family: "Share Tech Mono", monospace;
+  background-color: #0d0d0d;
+
+  // scanline overlay on body
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  #container {
+    background-color: #0d0d0d;
+
+    > * {
+      background-color: #111;
+      border: 1px solid #f5c400;
+      box-shadow:
+        0 0 8px rgba(245, 196, 0, 0.3),
+        inset 0 0 8px rgba(245, 196, 0, 0.05);
+      color: #f5c400;
+    }
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Rajdhani", sans-serif;
+    color: #f5c400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p,
+  li,
+  label {
+    color: #c9a800;
+  }
+
+  input,
+  textarea {
+    background: #1a1a1a;
+    border: 1px solid #f5c400;
+    color: #f5c400;
+    font-family: "Share Tech Mono", monospace;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(245, 196, 0, 0.6);
+    }
+  }
+
+  button {
+    background: #f5c400;
+    color: #0d0d0d;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #ffd700;
+      box-shadow: 0 0 12px rgba(245, 196, 0, 0.8);
+    }
+  }
+
+  // glitch effect on profile name
+  .profile h1 {
+    position: relative;
+    animation: glitch 3s infinite;
+
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    &::before {
+      color: #ff003c;
+      animation: glitch-top 3s infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    }
+
+    &::after {
+      color: #00fff9;
+      animation: glitch-bottom 3s infinite;
+      clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    }
+  }
+
+  @keyframes glitch {
+    0%,
+    90%,
+    100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(-2px, 1px);
+    }
+    94% {
+      transform: translate(2px, -1px);
+    }
+    96% {
+      transform: translate(-1px, 2px);
+    }
+  }
+
+  @keyframes glitch-top {
+    0%,
+    90%,
+    100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(2px, -1px);
+    }
+    94% {
+      transform: translate(-2px, 1px);
+    }
+  }
+
+  @keyframes glitch-bottom {
+    0%,
+    90%,
+    100% {
+      transform: translate(0);
+    }
+    92% {
+      transform: translate(-2px, 1px);
+    }
+    94% {
+      transform: translate(2px, -1px);
+    }
+  }
+
+  .about-me,
+  .main-project {
+    border-left: 4px solid #f5c400;
+  }
+
+  .skills i {
+    color: #f5c400;
+    filter: drop-shadow(0 0 4px rgba(245, 196, 0, 0.6));
+  }
+
+  .links {
+    i {
+      color: #f5c400;
+    }
+
+    img {
+      filter: invert(1) sepia(1) saturate(5) hue-rotate(0deg);
+    }
+  }
+
+  .contact-me button,
+  .other-projects button {
+    background: #f5c400;
+    color: #0d0d0d;
+    border: none;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+
+    &:hover {
+      background: #ffd700;
+      box-shadow: 0 0 12px rgba(245, 196, 0, 0.8);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
