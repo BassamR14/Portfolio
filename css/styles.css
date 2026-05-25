@@ -21,9 +21,8 @@ h2 {
 #container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: 100vw;
-  height: 100vh;
+  grid-template-rows: repeat(8, 150px);
+  width: 100%;
   padding: 10px;
   gap: 10px;
   box-sizing: border-box;
@@ -88,6 +87,10 @@ h2 {
   grid-column: 3/4;
   grid-row: 7/9;
   overflow-y: auto;
+}
+#container .contact-me form input,
+#container .contact-me form textarea {
+  width: 100%;
 }
 #container .about-me {
   grid-column: 4/8;
@@ -216,7 +219,7 @@ body.theme-manga .main-project {
   border-left: 5px solid #111;
 }
 body.theme-manga .contact-me {
-  font-size: 12px;
+  font-size: 14px;
 }
 body.theme-manga .contact-me button,
 body.theme-manga .other-projects button {
