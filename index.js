@@ -82,23 +82,132 @@ function renderOtherProjects() {
   projectsContainer.classList.add("other-projects-container");
 
   otherProjects.forEach((project) => {
-    const card = document.createElement("div");
-    const link = document.createElement("a");
-    const img = document.createElement("img");
-    const title = document.createElement("h2");
-
-    img.src = project.image;
-    title.innerText = project.title;
-
-    link.append(img);
-    card.append(link, title);
-    projectsContainer.append(card);
+    createCard(project, projectsContainer, () => openModal("project", project));
   });
 
   const seeMoreBtn = document.createElement("button");
   seeMoreBtn.innerText = "See More";
 
   otherProjectsSection.append(projectsContainer, seeMoreBtn);
+
+  const allOtherProjects = projects.filter((p) => !p.featured).reverse();
+
+  seeMoreBtn.addEventListener("click", () => openModal("all-projects"));
+}
+
+// function renderAllOtherProjects(projects) {
+//   const modal = document.createElement("div");
+//   modal.classList.add("modal");
+
+//   const closeBtn = document.createElement("button");
+//   closeBtn.innerText = "✕";
+//   closeBtn.classList.add("modal-close");
+//   closeBtn.addEventListener("click", () => modal.remove());
+
+//   const projectsGrid = document.createElement("div");
+//   projectsGrid.classList.add("modal-grid");
+
+//   projects.forEach((project) => {
+//     createcard(project, projectsGrid);
+//   });
+
+//   modal.append(closeBtn, projectsGrid);
+//   document.body.append(modal);
+// }
+
+function openModal(type, data = null) {
+  // prevent duplicate modals
+  document.querySelector(".modal")?.remove();
+
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+
+  const closeBtn = document.createElement("button");
+  closeBtn.innerText = "✕";
+  closeBtn.classList.add("modal-close");
+  closeBtn.addEventListener("click", () => modal.remove());
+
+  const content = document.createElement("div");
+  content.classList.add("modal-content");
+
+  if (type === "all-projects") {
+    const allOtherProjects = projects.filter((p) => !p.featured).reverse();
+    const grid = document.createElement("div");
+    grid.classList.add("modal-grid");
+
+    allOtherProjects.forEach((project) => {
+      createCard(project, grid, () => openModal("project", project));
+    });
+
+    content.append(grid);
+  }
+
+  if (type === "project") {
+    content.classList.add("modal-content--detail");
+
+    const backBtn = document.createElement("button");
+    backBtn.innerText = "← Back";
+    backBtn.classList.add("modal-back");
+    backBtn.addEventListener("click", () => openModal("all-projects"));
+
+    const img = document.createElement("img");
+    img.src = data.image;
+
+    const title = document.createElement("h2");
+    title.innerText = data.title;
+
+    const description = document.createElement("p");
+    description.innerText = data.description;
+
+    const techSection = document.createElement("div");
+    techSection.classList.add("modal-tech");
+    data.tech.forEach((tech) => {
+      const span = document.createElement("span");
+      span.innerText = tech;
+      techSection.append(span);
+    });
+
+    const linksDiv = document.createElement("div");
+    linksDiv.classList.add("modal-links");
+
+    if (data.link && data.link !== "#") {
+      const liveLink = document.createElement("a");
+      liveLink.href = data.link;
+      liveLink.target = "_blank";
+      liveLink.innerText = "Live Site →";
+      linksDiv.append(liveLink);
+    }
+
+    if (data.githubLink) {
+      const githubLink = document.createElement("a");
+      githubLink.href = data.githubLink;
+      githubLink.target = "_blank";
+      githubLink.innerText = "GitHub →";
+      linksDiv.append(githubLink);
+    }
+
+    content.append(backBtn, img, title, description, techSection, linksDiv);
+  }
+
+  modal.append(closeBtn, content);
+  document.body.append(modal);
+}
+
+function createCard(object, appendLocation, onClick) {
+  const card = document.createElement("div");
+  const link = document.createElement("a");
+  const img = document.createElement("img");
+  const title = document.createElement("h2");
+
+  img.src = object.image;
+  title.innerText = object.title;
+
+  link.append(img);
+  card.append(link, title);
+  appendLocation.append(card);
+
+  card.addEventListener("click", onClick);
+  card.style.cursor = "pointer";
 }
 
 function initThemeToggle() {

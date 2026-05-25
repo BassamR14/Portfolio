@@ -62,4 +62,26 @@ body.theme-manga {
       transform: translate(3px, 3px);
     }
   }
+
+  .modal .modal-content {
+    background: #f5f0e8;
+    border: 2px solid #111;
+    box-shadow: 4px 4px 0px #111;
+
+    .project-card {
+      border: 2px solid #111;
+      box-shadow: 3px 3px 0px #111;
+    }
+
+    .modal-back {
+      color: #111;
+    }
+    .modal-links a {
+      color: #111;
+    }
+    .modal-tech span {
+      background: #111;
+      color: #f5f0e8;
+    }
+  }
 }
