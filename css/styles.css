@@ -557,4 +557,111 @@ body.theme-cyberpunk .modal .modal-content .modal-links a {
 body.theme-cyberpunk .modal .modal-content .modal-tech span {
   background: #f5c400;
   color: #0d0d0d;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    order: 1;
+  }
+  .about-me {
+    order: 2;
+  }
+  .main-project {
+    order: 3;
+  }
+  .other-projects {
+    order: 4;
+  }
+  .skills {
+    order: 5;
+  }
+  .education {
+    order: 6;
+  }
+  .contact-me {
+    order: 7;
+  }
+  .links {
+    order: 8;
+  }
+  .theme {
+    order: 9;
+  }
+  #container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  #container > * {
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+  }
+  #container .profile img {
+    width: 200px;
+  }
+  #container .main-project {
+    flex-direction: column;
+  }
+  #container .main-project img {
+    width: 100%;
+  }
+  #container .other-projects {
+    flex-direction: column;
+  }
+  #container .other-projects .other-projects-container {
+    flex-direction: column;
+  }
+  #container .other-projects img {
+    width: 100%;
+  }
+  .modal {
+    padding: 20px;
+  }
+  .modal .modal-content {
+    width: 100%;
+  }
+}
+@media (max-width: 1440px) and (min-width: 768px) {
+  #container {
+    grid-template-rows: repeat(8, minmax(150px, auto));
+  }
+  #container .main-project {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #container .main-project img {
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #container .other-projects {
+    grid-column: 5/9;
+    flex-direction: row;
+    align-items: center;
+  }
+  #container .other-projects .other-projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 20px;
+  }
+  #container .other-projects button {
+    align-self: center;
+    white-space: nowrap;
+    width: 100px;
+  }
+  #container .other-projects img {
+    width: 150px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #container .contact-me {
+    grid-column: 3/5;
+    overflow-y: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
