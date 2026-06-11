@@ -95,26 +95,6 @@ function renderOtherProjects() {
   seeMoreBtn.addEventListener("click", () => openModal("all-projects"));
 }
 
-// function renderAllOtherProjects(projects) {
-//   const modal = document.createElement("div");
-//   modal.classList.add("modal");
-
-//   const closeBtn = document.createElement("button");
-//   closeBtn.innerText = "✕";
-//   closeBtn.classList.add("modal-close");
-//   closeBtn.addEventListener("click", () => modal.remove());
-
-//   const projectsGrid = document.createElement("div");
-//   projectsGrid.classList.add("modal-grid");
-
-//   projects.forEach((project) => {
-//     createcard(project, projectsGrid);
-//   });
-
-//   modal.append(closeBtn, projectsGrid);
-//   document.body.append(modal);
-// }
-
 function openModal(type, data = null) {
   // prevent duplicate modals
   document.querySelector(".modal")?.remove();
