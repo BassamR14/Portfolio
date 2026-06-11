@@ -39,4 +39,14 @@ export const projects = [
     image: "images/solesearch.webp",
     featured: false,
   },
+  {
+    title: "Books R Us",
+    description:
+      "A full-stack bookstore application built with Strapi as a headless CMS. Users can browse, save books to their personal reading list, and rate books — with each book displaying an average rating from all submissions. Super Admins manage books and control the site's color theme directly through Strapi, while in-app admins can upload new books from the frontend.",
+    tech: ["HTML", "CSS", "JS", "Strapi"],
+    link: "",
+    githubLink: "https://github.com/BassamR14/CMS-FinalProject",
+    image: "images/placeholder.jpg",
+    featured: false,
+  },
 ];
