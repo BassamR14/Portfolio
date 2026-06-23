@@ -1,10 +1,12 @@
 import { projects } from "./data/projects.js";
 import { skills } from "./data/skills.js";
+import { courses } from "./data/courses.js";
 
 function onPageLoad() {
   renderSkills();
   renderMainProject();
   renderOtherProjects();
+  renderCourses();
   initThemeToggle();
 }
 
@@ -93,6 +95,34 @@ function renderOtherProjects() {
   const allOtherProjects = projects.filter((p) => !p.featured).reverse();
 
   seeMoreBtn.addEventListener("click", () => openModal("all-projects"));
+}
+
+function renderCourses() {
+  const courseSection = document.querySelector(".courses");
+
+  const courseList = document.createElement("ul");
+  courseList.classList.add("list");
+
+  courses.forEach((c) => {
+    const li = document.createElement("li");
+    li.classList.add("listing");
+    const courseSpan = document.createElement("span");
+    const statusSpan = document.createElement("span");
+
+    courseSpan.innerText = c.course;
+    statusSpan.innerText = c.status;
+
+    if (c.status === "Completed") {
+      statusSpan.classList.add("course-completed");
+    } else {
+      statusSpan.classList.add("course-upcoming");
+    }
+
+    li.append(courseSpan, statusSpan);
+    courseList.append(li);
+  });
+
+  courseSection.append(courseList);
 }
 
 function openModal(type, data = null) {

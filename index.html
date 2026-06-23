@@ -47,23 +47,29 @@
 
       <section class="contact-me">
         <h2>Contact me</h2>
-        <form>
+        <form id="contact-form">
+          <input
+            type="hidden"
+            name="access_key"
+            value="55aa23e5-fa39-4cb5-b3e3-2a8f915f13d5" />
+
           <label>
             <p>Name</p>
-            <input type="text" />
+            <input type="text" name="name" required />
           </label>
           <br />
           <label>
             <p>Email</p>
-            <input type="email" />
+            <input type="email" name="email" required />
           </label>
           <br />
           <label>
             <p>Message</p>
-            <textarea></textarea>
+            <textarea name="message" required></textarea>
           </label>
           <button type="submit">Send Message</button>
         </form>
+        <p id="form-result"></p>
       </section>
 
       <section class="about-me">
@@ -121,6 +127,10 @@
       <article class="main-project"></article>
 
       <article class="other-projects"></article>
+
+      <section class="courses">
+        <h2>Courses</h2>
+      </section>
     </main>
   </body>
 </html>

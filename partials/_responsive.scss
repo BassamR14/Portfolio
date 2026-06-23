@@ -17,14 +17,17 @@
   .education {
     order: 6;
   }
-  .contact-me {
+  .courses {
     order: 7;
+  }
+  .contact-me {
+    order: 9;
   }
   .links {
     order: 8;
   }
   .theme {
-    order: 9;
+    order: 10;
   }
 
   #container {
@@ -117,6 +120,13 @@
     .contact-me {
       grid-column: 3 / 5;
       overflow-y: auto;
+    }
+
+    .courses {
+      .list {
+        flex-wrap: nowrap;
+        height: 100%;
+      }
     }
   }
 }

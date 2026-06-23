@@ -21,7 +21,7 @@ h2 {
 #container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 150px);
+  grid-template-rows: repeat(8, 150px) 250px;
   width: 100%;
   padding: 10px;
   gap: 10px;
@@ -189,6 +189,24 @@ h2 {
 }
 #container .other-projects img {
   width: 300px;
+}
+#container .courses {
+  grid-column: 1/9;
+  grid-row: 9/10;
+  box-sizing: border-box;
+}
+#container .courses .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 80%;
+  box-sizing: border-box;
+}
+#container .courses .list .listing {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
 }
 
 .modal {
@@ -578,14 +596,17 @@ body.theme-cyberpunk .modal .modal-content .modal-tech span {
   .education {
     order: 6;
   }
-  .contact-me {
+  .courses {
     order: 7;
+  }
+  .contact-me {
+    order: 9;
   }
   .links {
     order: 8;
   }
   .theme {
-    order: 9;
+    order: 10;
   }
   #container {
     display: flex;
@@ -663,5 +684,9 @@ body.theme-cyberpunk .modal .modal-content .modal-tech span {
   #container .contact-me {
     grid-column: 3/5;
     overflow-y: auto;
+  }
+  #container .courses .list {
+    flex-wrap: nowrap;
+    height: 100%;
   }
 }/*# sourceMappingURL=styles.css.map */
