@@ -8,6 +8,7 @@ function onPageLoad() {
   renderOtherProjects();
   renderCourses();
   initThemeToggle();
+  initForm();
 }
 
 onPageLoad();
@@ -246,4 +247,41 @@ function applyTheme(theme, buttons, pill) {
   pill.style.transform = index === 0 ? "translateX(0)" : "translateX(100%)";
 
   document.body.className = `theme-${theme}`;
+}
+
+function initForm() {
+  const form = document.querySelector("#contact-form");
+  const submitBtn = document.querySelector("#form-submit");
+  const msg = document.querySelector("#form-result");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        msg.innerText = "Message Sent";
+        form.reset();
+      } else {
+        msg.innerText = "Error: " + (data.message || "Message not sent");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
 }
