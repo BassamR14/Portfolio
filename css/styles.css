@@ -92,6 +92,9 @@ h2 {
 #container .contact-me form textarea {
   width: 100%;
 }
+#container .contact-me #form-result {
+  margin-top: 10px;
+}
 #container .about-me {
   grid-column: 4/8;
   grid-row: 1/3;
