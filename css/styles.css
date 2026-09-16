@@ -640,6 +640,20 @@ body.theme-cyberpunk .modal .modal-content .modal-tech span {
   #container .other-projects img {
     width: 100%;
   }
+  #container .courses .list {
+    flex-wrap: nowrap;
+    height: auto;
+    align-items: stretch;
+    gap: 8px;
+  }
+  #container .courses .list .listing {
+    width: 100%;
+    gap: 12px;
+    font-size: 0.9rem;
+  }
+  #container .courses .list .listing p {
+    margin: 0;
+  }
   .modal {
     padding: 20px;
   }

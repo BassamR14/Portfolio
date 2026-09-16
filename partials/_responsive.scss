@@ -65,6 +65,25 @@
         width: 100%;
       }
     }
+
+    .courses {
+      .list {
+        flex-wrap: nowrap;
+        height: auto;
+        align-items: stretch;
+        gap: 8px;
+
+        .listing {
+          width: 100%;
+          gap: 12px;
+          font-size: 0.9rem;
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
   }
 
   .modal {

@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "Collect Everything",
     description:
-      "A personal project built around a simple frustration — why do you need a different account for every type of media? Collect Everything is a single place to track your collection of movies, TV shows, games, comics, manga, anime, books, and vinyl. Built for yourself, with sharing in mind for the future.",
+      "This project is currently in progress and will be rebuilt using React.\n\n A personal project about the physical media we choose to keep. In a world where so much of what we watch, play, and listen to is digital, the things we own physically can feel like an extension of who we are. Collect Everything is a place to track your movies, games, books, comics, vinyl, and more — with the idea of eventually sharing collections, discovering recommendations, and telling the stories behind the things you choose to own.",
     tech: ["HTML", "CSS", "JS"],
     link: "#",
     githubLink: "",
@@ -46,7 +46,7 @@ export const projects = [
     tech: ["HTML", "CSS", "JS", "Strapi"],
     link: "",
     githubLink: "https://github.com/BassamR14/CMS-FinalProject",
-    image: "images/placeholder.jpg",
+    image: "images/booksRUs.webp",
     featured: false,
   },
 ];
