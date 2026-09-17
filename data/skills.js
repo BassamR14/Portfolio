@@ -13,11 +13,7 @@ export const skills = [
   { name: "Matlab", icon: "devicon-matlab-plain", category: "languages" },
 
   // Frameworks & Libraries
-  {
-    name: "Bootstrap",
-    icon: "devicon-bootstrap-plain",
-    category: "frameworks",
-  },
+  { name: "React", icon: "devicon-react-original", category: "frameworks" },
 
   // Tools
   { name: "Git", icon: "devicon-git-plain", category: "tools" },
