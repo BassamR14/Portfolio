@@ -33,11 +33,11 @@ export const courses = [
   },
   {
     course: "Javascript 3",
-    status: "Upcoming",
+    status: "Completed",
   },
   {
     course: "JavaScript som backendspråk",
-    status: "Upcoming",
+    status: "Ongoing",
   },
   {
     course: "JavaScript 4",

@@ -192,6 +192,16 @@ body.theme-cyberpunk {
     }
   }
 
+  .main-project {
+    .modal-links a {
+      color: #f5c400;
+    }
+    .modal-tech span {
+      background: #f5c400;
+      color: #0d0d0d;
+    }
+  }
+
   .modal {
     .modal-close:hover {
       color: #0d0d0d;

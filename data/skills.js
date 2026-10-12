@@ -8,12 +8,18 @@ export const skills = [
     icon: "devicon-javascript-plain",
     category: "languages",
   },
+  {
+    name: "TypeScript",
+    icon: "devicon-typescript-plain",
+    category: "languages",
+  },
   { name: "Java", icon: "devicon-java-plain", category: "languages" },
   { name: "Python", icon: "devicon-python-plain", category: "languages" },
   { name: "Matlab", icon: "devicon-matlab-plain", category: "languages" },
 
   // Frameworks & Libraries
   { name: "React", icon: "devicon-react-original", category: "frameworks" },
+  { name: "Next.js", icon: "devicon-nextjs-plain", category: "frameworks" },
 
   // Tools
   { name: "Git", icon: "devicon-git-plain", category: "tools" },

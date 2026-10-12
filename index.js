@@ -38,39 +38,68 @@ function renderSkills() {
 
 function renderMainProject() {
   const featuredProject = projects.find((p) => p.featured);
-
   const mainProject = document.querySelector(".main-project");
 
+  // Image (linked to live site if there is one)
   const imgDiv = document.createElement("div");
-  const link = document.createElement("a");
+  const imgLink = document.createElement("a");
   const img = document.createElement("img");
   img.src = featuredProject.image;
+  img.alt = featuredProject.title;
+  if (featuredProject.link && featuredProject.link !== "#") {
+    imgLink.href = featuredProject.link;
+    imgLink.target = "_blank";
+    imgLink.rel = "noopener";
+  }
+  imgLink.append(img);
+  imgDiv.append(imgLink);
 
-  link.append(img);
-  imgDiv.append(link);
-
+  // Info
   const infoDiv = document.createElement("div");
   infoDiv.classList.add("main-proj-info");
-  const title = document.createElement("h2");
-  const text = document.createElement("p");
-  const techUsed = document.createElement("p");
-  const github = document.createElement("a");
 
+  const title = document.createElement("h2");
   title.innerText = featuredProject.title;
+
+  const text = document.createElement("p");
   text.innerText = featuredProject.description;
-  github.innerText = featuredProject.githubLink;
-  techUsed.innerText = "Tech: ";
+
+  // Tech: label and list are siblings, not nested in a <p>
+  const techWrapper = document.createElement("div");
+  techWrapper.classList.add("tech-wrapper");
 
   const techSection = document.createElement("section");
-  techSection.classList.add("tech-used");
+  techSection.classList.add("modal-tech");
   featuredProject.tech.forEach((tech) => {
-    const div = document.createElement("div");
-    div.innerText = tech;
-    techSection.append(div);
+    const span = document.createElement("span");
+    span.innerText = tech;
+    techSection.append(span);
   });
+  techWrapper.append(techSection);
 
-  techUsed.append(techSection);
-  infoDiv.append(title, text, techUsed, github);
+  // Links
+  const linksDiv = document.createElement("div");
+  linksDiv.classList.add("modal-links");
+
+  if (featuredProject.link && featuredProject.link !== "#") {
+    const liveLink = document.createElement("a");
+    liveLink.href = featuredProject.link;
+    liveLink.target = "_blank";
+    liveLink.rel = "noopener";
+    liveLink.innerText = "Live Site →";
+    linksDiv.append(liveLink);
+  }
+
+  if (featuredProject.githubLink) {
+    const githubLink = document.createElement("a");
+    githubLink.href = featuredProject.githubLink;
+    githubLink.target = "_blank";
+    githubLink.rel = "noopener";
+    githubLink.innerText = "GitHub →";
+    linksDiv.append(githubLink);
+  }
+
+  infoDiv.append(title, text, techWrapper, linksDiv);
   mainProject.append(imgDiv, infoDiv);
 }
 

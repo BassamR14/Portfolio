@@ -1,14 +1,15 @@
 export const projects = [
-  {
-    title: "Collect Everything",
-    description:
-      "This project is currently in progress and will be rebuilt using React.\n\n A personal project about the physical media we choose to keep. In a world where so much of what we watch, play, and listen to is digital, the things we own physically can feel like an extension of who we are. Collect Everything is a place to track your movies, games, books, comics, vinyl, and more — with the idea of eventually sharing collections, discovering recommendations, and telling the stories behind the things you choose to own.",
-    tech: ["HTML", "CSS", "JS"],
-    link: "#",
-    githubLink: "",
-    image: "images/placeholder.jpg",
-    featured: true,
-  },
+  // {
+  //   title: "Collect Everything",
+  //   description:
+  //     "This project is currently in progress and will be rebuilt using React.\n\n A personal project about the physical media we choose to keep. In a world where so much of what we watch, play, and listen to is digital, the things we own physically can feel like an extension of who we are. Collect Everything is a place to track your movies, games, books, comics, vinyl, and more — with the idea of eventually sharing collections, discovering recommendations, and telling the stories behind the things you choose to own.",
+  //   tech: ["HTML", "CSS", "JS"],
+  //   link: "#",
+  //   githubLink: "",
+  //   image: "images/placeholder.jpg",
+  //   featured: true,
+  // },
+
   {
     title: "Cat Quiz",
     description:
@@ -48,5 +49,15 @@ export const projects = [
     githubLink: "https://github.com/BassamR14/CMS-FinalProject",
     image: "images/booksRUs.webp",
     featured: false,
+  },
+  {
+    title: "Sprintboard - GitHub Issues Kanban Board",
+    description:
+      "A Kanban board that turns any public GitHub repository (or a private one, with a personal access token) into a three-column board: To do, Ongoing, and Completed. Paste a repo URL and issues are sorted into columns by their labels. Drag cards between columns to update the label on GitHub, open a card for the full issue detail, and create or edit issues straight from the app.",
+    tech: ["Next.js", "React", "Typescript", "dnd-kit", "CSS-modules"],
+    link: "https://js3-finalproject-sprintboard-ezip.vercel.app/",
+    githubLink: "https://github.com/BassamR14/js3-finalproject-sprintboard",
+    image: "images/sprintboard.webp",
+    featured: true,
   },
 ];
