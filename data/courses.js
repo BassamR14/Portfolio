@@ -37,7 +37,7 @@ export const courses = [
   },
   {
     course: "JavaScript som backendspråk",
-    status: "Ongoing",
+    status: "Completed",
   },
   {
     course: "JavaScript 4",

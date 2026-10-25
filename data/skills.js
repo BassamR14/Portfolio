@@ -21,6 +21,12 @@ export const skills = [
   { name: "React", icon: "devicon-react-original", category: "frameworks" },
   { name: "Next.js", icon: "devicon-nextjs-plain", category: "frameworks" },
 
+  // Backend
+  { name: "Node.js", icon: "devicon-nodejs-plain", category: "backend" },
+  { name: "Express", icon: "devicon-express-original", category: "backend" },
+  { name: "MySQL", icon: "devicon-mysql-original", category: "backend" },
+  { name: "SQLite", icon: "devicon-sqlite-plain", category: "backend" },
+
   // Tools
   { name: "Git", icon: "devicon-git-plain", category: "tools" },
   { name: "GitHub", icon: "devicon-github-original", category: "tools" },

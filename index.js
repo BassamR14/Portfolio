@@ -15,7 +15,7 @@ onPageLoad();
 
 function renderSkills() {
   const skillsList = document.querySelector(".skills-container");
-  const categories = ["languages", "frameworks", "tools"];
+  const categories = ["languages", "frameworks", "backend", "tools"];
 
   categories.forEach((category) => {
     const heading = document.createElement("h3");
@@ -254,7 +254,7 @@ function initThemeToggle() {
   const buttons = document.querySelectorAll(".toggle-btn");
   const pill = document.querySelector(".toggle-pill");
 
-  const savedTheme = localStorage.getItem("theme") || "manga";
+  const savedTheme = localStorage.getItem("theme") || "cyberpunk";
   applyTheme(savedTheme, buttons, pill);
 
   buttons.forEach((btn, index) => {

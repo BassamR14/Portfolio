@@ -60,4 +60,14 @@ export const projects = [
     image: "images/sprintboard.webp",
     featured: true,
   },
+  {
+    title: "The Crooked Raven",
+    description:
+      "A hotel booking app built as the backend project for my Node.js and Express course. Guests can book a single or double room through a validated form and get a confirmation page, while a hidden admin page lets staff view, edit, and delete reservations. The Express API keeps all SQL in a DAO layer and runs on a SQLite database that is created automatically on first start.",
+    tech: ["React", "Node.js", "Express", "SQLite"],
+    link: "",
+    githubLink: "https://github.com/BassamR14/JS-Backend-FinalProject",
+    image: "images/raven.webp",
+    featured: false,
+  },
 ];
